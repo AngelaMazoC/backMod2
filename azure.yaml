@@ -1,0 +1,12 @@
+name: backendproject
+metadata:
+  template: dotnet-backend-service@0.0.1-beta
+services:
+  api:
+    language: dotnet
+    project: .
+    host: appservice
+    docker:
+      path: ./Dockerfile
+pipeline:
+  provider: github

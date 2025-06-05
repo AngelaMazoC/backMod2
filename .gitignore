@@ -1,0 +1,10 @@
+bin/
+obj/
+Oportunidades/
+Data/
+Migrations/
+Instituciones/
+appsettings.json/
+Program.cs/
+
+

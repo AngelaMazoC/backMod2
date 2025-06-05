@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=NodoDB;Username=usuarionodo;Password=1234"
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: usuarionodo
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: NodoDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
